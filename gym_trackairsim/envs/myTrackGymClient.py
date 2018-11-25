@@ -209,8 +209,8 @@ class myTrackGymClient(MultirotorClient):
         
         small = cv2.resize(newImage1, (0,0), fx=0.39, fy=0.38)
                 
-        cut = small[20:40,:]
-        
+        cut = small[20:50,:]
+        '''
         info_section = np.zeros((10,cut.shape[1]),dtype=np.uint8) + 255
         info_section[9,:] = 0
         
@@ -227,8 +227,8 @@ class myTrackGymClient(MultirotorClient):
             
         #cv2.imshow("Test", total)
         #cv2.waitKey(0)
-        
-        return total
+        '''
+        return cut
     
     def AirSim_reset(self):
         #self.armDisarm(False, vehicle_name)

@@ -4,7 +4,12 @@ Created on Sat Oct 14 14:16:10 2017
 
 @author: Ali Darwish
 """
-
+from __future__ import print_function, division
+import tensorflow as tf
+from keras.backend.tensorflow_backend import set_session  
+config = tf.ConfigProto()  
+config.gpu_options.allow_growth = True  
+set_session(tf.Session(config=config)) 
 import numpy as np
 import gym
 import gym.spaces
@@ -48,7 +53,7 @@ env.seed(123)
 nb_actions = env.action_space.n
 
 
-# Next, we build our model. We use the same model that was described by Mnih et al. (2015).
+
 INPUT_SHAPE = (30, 100)
 WINDOW_LENGTH = 1
 # Next, we build our model. We use the same model that was described by Mnih et al. (2015).
